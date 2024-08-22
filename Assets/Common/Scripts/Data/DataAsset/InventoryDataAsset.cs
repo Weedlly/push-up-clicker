@@ -8,10 +8,8 @@ namespace Common.Scripts.Data.DataAsset
 {
     public enum InventoryType
     {
-        TotalStar = 1, // Total Star of all Stage are conquered
-        TalentPoint = 2, // Point use to upgrade Rune
-        GoldenCoin = 3, // Can be placed when purchase
-        SliverCoin = 4, // Can be placed after complete each Stage
+        Power = 1,
+        Coin = 2,
     }
 
     [Serializable]
@@ -35,22 +33,12 @@ namespace Common.Scripts.Data.DataAsset
             {
                 new InventoryData
                 {
-                    InventoryType = InventoryType.TotalStar,
+                    InventoryType = InventoryType.Power,
                     Amount = 0,
                 },
                 new InventoryData
                 {
-                    InventoryType = InventoryType.TalentPoint,
-                    Amount = 0,
-                },
-                new InventoryData
-                {
-                    InventoryType = InventoryType.GoldenCoin,
-                    Amount = 0,
-                },
-                new InventoryData
-                {
-                    InventoryType = InventoryType.SliverCoin,
+                    InventoryType = InventoryType.Coin,
                     Amount = 0,
                 },
             };
@@ -103,7 +91,7 @@ namespace Common.Scripts.Data.DataAsset
         {
             return InventoryDatas.Find(data => data.InventoryType == type);
         }
-        public List<InventoryData> GetAllStageData()
+        public List<InventoryData> GetInventoryData()
         {
             return InventoryDatas;
         }

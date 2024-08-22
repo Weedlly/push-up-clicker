@@ -6,6 +6,8 @@ namespace Common.Scripts.Navigator
         {
             public const string HomeScreen = "Home/HomeScreen";
             public const string SettingPu = "Home/SettingPu";
+            public const string UpgradeStatPu = "Home/UpgradeStatPu";
+            public const string EquipmentPu = "Home/EquipmentPu";
         }
 
     }
