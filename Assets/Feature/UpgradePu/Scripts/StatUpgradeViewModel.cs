@@ -50,7 +50,7 @@ namespace Feature.UpgradePu.Scripts
         }
         private void OnClickUpgrade(EStatUpgrade eStatUpgrade)
         {
-
+            _statUpgradeDataAsset.UpgradeStat(eStatUpgrade);
         }
     }
 }

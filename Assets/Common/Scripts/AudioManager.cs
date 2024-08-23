@@ -17,24 +17,24 @@ namespace Common.Scripts
     {
         [SerializeField] private AudioSource _audioSourceLoop;
         [SerializeField] private AudioSource _audioSourceOneShot;
-        [SerializeField] private SettingDataAsset _settingDataAsset;
+        // [SerializeField] private SettingDataAsset _settingDataAsset;
         private async void Awake()
         {
             Messenger.Default.Subscribe<AudioPlayOneShotPayload>(PlayOneShot);
             Messenger.Default.Subscribe<AudioPlayLoopPayload>(PlayLoop);
-            _settingDataAsset.OnChangeSound += OnChangeSound;
-            _settingDataAsset.OnChangeMusic += OnChangeMusic;
+            // _settingDataAsset.OnChangeSound += OnChangeSound;
+            // _settingDataAsset.OnChangeMusic += OnChangeMusic;
 
-            await UniTask.WaitUntil(() => _settingDataAsset.IsDoneLoadData());
-            OnChangeSound(_settingDataAsset.IsSoundOn);
-            OnChangeMusic(_settingDataAsset.IsMusicOn);
+            // await UniTask.WaitUntil(() => _settingDataAsset.IsDoneLoadData());
+            // OnChangeSound(_settingDataAsset.IsSoundOn);
+            // OnChangeMusic(_settingDataAsset.IsMusicOn);
         }
         private void OnDestroy()
         {
             Messenger.Default.Unsubscribe<AudioPlayOneShotPayload>(PlayOneShot);
             Messenger.Default.Unsubscribe<AudioPlayLoopPayload>(PlayLoop);
-            _settingDataAsset.OnChangeSound -= OnChangeSound;
-            _settingDataAsset.OnChangeMusic -= OnChangeMusic;
+            // _settingDataAsset.OnChangeSound -= OnChangeSound;
+            // _settingDataAsset.OnChangeMusic -= OnChangeMusic;
         }
         private void OnChangeSound(bool isTurnOn)
         {
@@ -46,10 +46,14 @@ namespace Common.Scripts
         }
         private void PlayOneShot(AudioPlayOneShotPayload payload)
         {
+            if (payload.AudioClip == null)
+                return;
             _audioSourceOneShot.PlayOneShot(payload.AudioClip);
         }
         private void PlayLoop(AudioPlayLoopPayload payload)
         {
+            if (payload.AudioClip == null)
+                return;
             _audioSourceLoop.clip = payload.AudioClip;
             _audioSourceLoop.loop = true;
             _audioSourceLoop.Play();

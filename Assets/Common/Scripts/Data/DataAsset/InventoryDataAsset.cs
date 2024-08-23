@@ -9,6 +9,7 @@ namespace Common.Scripts.Data.DataAsset
     public enum InventoryType
     {
         Power = 1,
+        Stamina = 3,
         Coin = 2,
     }
 
@@ -40,6 +41,11 @@ namespace Common.Scripts.Data.DataAsset
                 {
                     InventoryType = InventoryType.Coin,
                     Amount = 0,
+                },
+                new InventoryData
+                {
+                    InventoryType = InventoryType.Stamina,
+                    Amount = 10,
                 },
             };
         }

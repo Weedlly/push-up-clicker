@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702bba59c64c44889616e3f711943d35, type: 3}
   m_Name: InventoryDataAsset
   m_EditorClassIdentifier: 
-  _filename: InventoryDataAsset
+  _filename: InventoryDataAsset.json
   _model:
     ListInventoryData: []
   TestInventoryType: 0

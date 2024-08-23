@@ -34,7 +34,7 @@ namespace Feature.EquipmentPu.Scripts
             {
                 eEquipmentStatus = EEquipmentStatus.UnOwned;
             }
-            else if (equipmentInfo.UnlockLevel == _commonUserDataAsset.CurEquipmentLevel)
+            else if (idx == _commonUserDataAsset.CurEquipmentIdx)
             {
                 eEquipmentStatus = EEquipmentStatus.Selected;
             }
