@@ -95,6 +95,12 @@ namespace Common.Scripts.Data.DataAsset
         {
             return InventoryDatas;
         }
+        public int GetPowerLevel()
+        {
+            //todo
+            // replace with another class to calculate level
+            return (GetInventoryDataByType(InventoryType.Power).Amount / 100) + 1;
+        }
     }
 
     public struct InventoryChangePayload
