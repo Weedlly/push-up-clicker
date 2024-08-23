@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 namespace Common.Scripts.Data.DataAsset
 {
+    [Serializable]
     public struct CommonUserDataModel : IDefaultDataModel
     {
         public int CurEquipmentLevel;
