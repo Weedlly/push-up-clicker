@@ -20,6 +20,6 @@ MonoBehaviour:
     Kg: 5
   - UnlockLevel: 10
     Material: {fileID: 2100000, guid: ca9f08f5cbc684a81bb9161b8e88a441, type: 2}
-    Power: 12
-    Coin: 12
+    Power: 15
+    Coin: 15
     Kg: 15
