@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _calculateStatUpgrade:
-    _perLevelCoinFactor: 10
+    _perLevelCoinFactor: 7
   _statUpgradeConfig: {fileID: 11400000, guid: 687ebcf3bf2984711a00cbfdc45c166a, type: 2}
   _inventoryDataAsset: {fileID: 11400000, guid: a54b3b648b29c44e6b642be027fcb7a0, type: 2}
   _statUpgradeDataAsset: {fileID: 11400000, guid: e2eabcec0798149e0b630988b43ca74a, type: 2}
