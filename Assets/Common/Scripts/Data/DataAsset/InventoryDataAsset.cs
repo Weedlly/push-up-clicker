@@ -105,7 +105,7 @@ namespace Common.Scripts.Data.DataAsset
         {
             //todo
             // replace with another class to calculate level
-            return (GetInventoryDataByType(InventoryType.Power).Amount / 100) + 1;
+            return (GetInventoryDataByType(InventoryType.Power).Amount / 10) + 1;
         }
     }
 

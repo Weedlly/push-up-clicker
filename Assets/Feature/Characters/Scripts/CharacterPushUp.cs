@@ -47,7 +47,7 @@ namespace Feature.Characters.Scripts
         }
         bool IsEnoughStaminaPushUp()
         {
-            return _equipmentDataConfig.EquipmentInfos[_commonUserDataAsset.CurEquipmentIdx].Kg < _inventoryDataAsset.GetInventoryDataByType(InventoryType.Stamina).Amount;
+            return _equipmentDataConfig.EquipmentInfos[_commonUserDataAsset.CurEquipmentIdx].Kg <= _inventoryDataAsset.GetInventoryDataByType(InventoryType.Stamina).Amount;
         }
     }
 }

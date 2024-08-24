@@ -6,9 +6,9 @@ namespace Common.Scripts.Inventory
 {
     public class CommonInventoryDataViewModel : MonoBehaviour
     {
-        [SerializeField] private InventoryType _inventoryType;
-        [SerializeField] private CommonInventoryDataView _inventoryDataView;
-        [SerializeField] private InventoryDataAsset _inventoryDataAsset;
+        [SerializeField] protected InventoryType _inventoryType;
+        [SerializeField] protected CommonInventoryDataView _inventoryDataView;
+        [SerializeField] protected InventoryDataAsset _inventoryDataAsset;
         private void Start()
         {
             SubscribeAmountChange();
@@ -22,7 +22,7 @@ namespace Common.Scripts.Inventory
         {
             SetUpView();
         }
-        private void SetUpView()
+        protected virtual void SetUpView()
         {
             InventoryData inventoryData = _inventoryDataAsset.GetInventoryDataByType(_inventoryType);
             _inventoryDataView.Setup(inventoryData.Amount);
