@@ -10,6 +10,7 @@ namespace Feature.UpgradePu.Scripts
         [SerializeField] private TextMeshProUGUI _txtName;
         [SerializeField] private TextMeshProUGUI _txtPreview;
         [SerializeField] private Button _btn;
+        [SerializeField] private TextMeshProUGUI _txtCoinNeedToUpgrade;
         [SerializeField] private Color _upgradableColor;
         [SerializeField] private Color _unUpgradableColor;
 
@@ -23,10 +24,11 @@ namespace Feature.UpgradePu.Scripts
         {
             _onUpgrade?.Invoke(_eStatUpgrade);
         }
-        public void SetUp(Action<EStatUpgrade> onUpgrade,EStatUpgrade eStatUpgrade, string statName, string txtPreview)
+        public void SetUp(Action<EStatUpgrade> onUpgrade,EStatUpgrade eStatUpgrade, string statName, string txtPreview, int amountCoin)
         {
             _eStatUpgrade = eStatUpgrade;
             _btn.image.color = onUpgrade != null ? _upgradableColor : _unUpgradableColor;
+            _txtCoinNeedToUpgrade.text = amountCoin.ToString();
             _txtName.text = statName;
             _txtPreview.text = txtPreview;
             _onUpgrade = onUpgrade;

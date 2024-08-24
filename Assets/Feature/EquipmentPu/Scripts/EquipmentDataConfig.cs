@@ -10,7 +10,7 @@ namespace Feature.EquipmentPu.Scripts
     public struct EquipmentInfo
     {
         public int UnlockLevel;
-        public Color Color;
+        public Material Material;
         public int Power;
         public int Coin;
         public int Kg;

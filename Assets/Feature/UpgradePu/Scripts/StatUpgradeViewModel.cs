@@ -24,6 +24,10 @@ namespace Feature.UpgradePu.Scripts
         [SerializeField] private List<SingleStatUpgradeView> _singleStatUpgradeViews;
         private void Start()
         {
+            ResetData();
+        }
+        private void ResetData()
+        {
             // just for demo
             if (_singleStatUpgradeViews.Count == 3)
             {
@@ -36,8 +40,8 @@ namespace Feature.UpgradePu.Scripts
         {
             int curCoin = _inventoryDataAsset.GetInventoryDataByType(InventoryType.Coin).Amount;
             int curStatLevel = _statUpgradeDataAsset.GetStatUpgradeDataByType(eStatUpgrade).Level;
-            bool isUpgradable = 
-                _calculateStatUpgrade.GetNextLevelStatUpgradeCoin(curStatLevel) < curCoin;
+            int coinNeedToUpgrade = _calculateStatUpgrade.GetNextLevelStatUpgradeCoin(curStatLevel);
+            bool isUpgradable = coinNeedToUpgrade < curCoin;
 
             int originalStatVal = _statUpgradeConfig.GeConfigByKey(eStatUpgrade).OriginalVal;
             
@@ -45,12 +49,14 @@ namespace Feature.UpgradePu.Scripts
                 isUpgradable ? OnClickUpgrade : null,
                 eStatUpgrade,
                 statName: eStatUpgrade.ToString(),
-                txtPreview: $"{originalStatVal * curStatLevel} -> {originalStatVal * (curStatLevel + 1)}"
+                txtPreview: $"{originalStatVal * curStatLevel} -> {originalStatVal * (curStatLevel + 1)}",
+                coinNeedToUpgrade
             );
         }
         private void OnClickUpgrade(EStatUpgrade eStatUpgrade)
         {
             _statUpgradeDataAsset.UpgradeStat(eStatUpgrade);
+            ResetData();
         }
     }
 }

@@ -914,6 +914,7 @@ GameObject:
   - component: {fileID: 882052092}
   - component: {fileID: 882052091}
   - component: {fileID: 882052090}
+  - component: {fileID: 882052093}
   m_Layer: 6
   m_Name: Ball
   m_TagString: Untagged
@@ -1000,6 +1001,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 882052088}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &882052093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882052088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc1de9fbe4b4d0290d363a4194178f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _commonUserDataAsset: {fileID: 11400000, guid: c64327f04358945dfbfd9ef5a7293b14, type: 2}
+  _equipmentDataConfig: {fileID: 11400000, guid: 2acfba88771e1422e87820fd94e8bf1b, type: 2}
+  _inventoryDataAsset: {fileID: 11400000, guid: a54b3b648b29c44e6b642be027fcb7a0, type: 2}
+  _meshRenderer: {fileID: 882052091}
 --- !u!224 &962482658 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4714432588370305715, guid: 328a3e4643b9b43cbbc4066721593008, type: 3}
@@ -1365,37 +1382,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508868592}
   m_CullTransparentMesh: 1
---- !u!1 &1574344880 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7123246215401392330, guid: 328a3e4643b9b43cbbc4066721593008, type: 3}
-  m_PrefabInstance: {fileID: 7754681163853001980}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1574344882 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1583357335987064800, guid: 328a3e4643b9b43cbbc4066721593008, type: 3}
-  m_PrefabInstance: {fileID: 7754681163853001980}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1574344880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7c3c633bfce4d6a894f1a2ce4482642, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1574344885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1574344880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53b43e6cd473420ebf293f08f003d03d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inventoryType: 1
-  _inventoryDataView: {fileID: 1574344882}
-  _inventoryDataAsset: {fileID: 11400000, guid: a54b3b648b29c44e6b642be027fcb7a0, type: 2}
 --- !u!1 &1763418469
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,18 +1575,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1961435508441036304, guid: 328a3e4643b9b43cbbc4066721593008, type: 3}
-      propertyPath: _inventoryDataAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: a54b3b648b29c44e6b642be027fcb7a0, type: 2}
-    - target: {fileID: 1961435508441036304, guid: 328a3e4643b9b43cbbc4066721593008, type: 3}
-      propertyPath: _commonUserDataAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: c64327f04358945dfbfd9ef5a7293b14, type: 2}
-    - target: {fileID: 1961435508441036304, guid: 328a3e4643b9b43cbbc4066721593008, type: 3}
-      propertyPath: _equipmentDataConfig
-      value: 
-      objectReference: {fileID: 11400000, guid: 2acfba88771e1422e87820fd94e8bf1b, type: 2}
     - target: {fileID: 4714432588370305715, guid: 328a3e4643b9b43cbbc4066721593008, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1688,10 +1662,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7123246215401392330, guid: 328a3e4643b9b43cbbc4066721593008, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1574344885}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 328a3e4643b9b43cbbc4066721593008, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

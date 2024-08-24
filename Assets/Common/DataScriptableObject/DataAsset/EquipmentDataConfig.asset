@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EquipmentInfos:
   - UnlockLevel: 1
-    Color: {r: 0, g: 0, b: 0, a: 0}
+    Material: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
     Power: 5
     Coin: 5
     Kg: 5
   - UnlockLevel: 10
-    Color: {r: 0, g: 0, b: 0, a: 0}
+    Material: {fileID: 2100000, guid: ca9f08f5cbc684a81bb9161b8e88a441, type: 2}
     Power: 12
     Coin: 12
     Kg: 15

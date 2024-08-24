@@ -25,6 +25,7 @@ namespace Common.Scripts.Data.DataAsset
             set
             {
                 _model.CurEquipmentIdx = value;
+                SaveData();
             }
             get
             {

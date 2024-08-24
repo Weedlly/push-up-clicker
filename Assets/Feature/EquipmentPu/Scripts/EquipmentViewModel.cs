@@ -1,4 +1,6 @@
 using Common.Scripts.Data.DataAsset;
+using Feature.Characters.Scripts;
+using SuperMaxim.Messaging;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +19,10 @@ namespace Feature.EquipmentPu.Scripts
         [SerializeField] private CommonUserDataAsset _commonUserDataAsset;
         [SerializeField] private List<SingleEquipmentView> _singleEquipmentViews;
         private void Start()
+        {
+            RefreshData();
+        }
+        private void RefreshData()
         {
             // just for demo
             if (_singleEquipmentViews.Count == 2)
@@ -56,7 +62,9 @@ namespace Feature.EquipmentPu.Scripts
         }
         private void OnSelected(int idx)
         {
-
+            _commonUserDataAsset.CurEquipmentIdx = idx;
+            RefreshData();
+            Messenger.Default.Publish(new EquipmentChangingPayload());
         }
     }
 }
