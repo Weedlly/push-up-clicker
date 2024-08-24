@@ -857,7 +857,6 @@ GameObject:
   m_Component:
   - component: {fileID: 881040189}
   - component: {fileID: 881040190}
-  - component: {fileID: 881040191}
   m_Layer: 6
   m_Name: Character
   m_TagString: Untagged
@@ -903,21 +902,6 @@ MonoBehaviour:
   _characterPushUpAnimation:
     _animator: {fileID: 117062269}
   _delayNextStep: 1
---- !u!114 &881040191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 881040188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a0060a150bd46c6935eafe9a531fb27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inventoryDataAsset: {fileID: 11400000, guid: a54b3b648b29c44e6b642be027fcb7a0, type: 2}
-  _statUpgradeDataAsset: {fileID: 11400000, guid: e2eabcec0798149e0b630988b43ca74a, type: 2}
-  _statUpgradeConfig: {fileID: 11400000, guid: 687ebcf3bf2984711a00cbfdc45c166a, type: 2}
 --- !u!1 &882052088
 GameObject:
   m_ObjectHideFlags: 0
@@ -1409,7 +1393,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -1574,6 +1558,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1961435508441036304, guid: 328a3e4643b9b43cbbc4066721593008, type: 3}
+      propertyPath: _pushUpRewardingEffect._effectDuration
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4714432588370305715, guid: 328a3e4643b9b43cbbc4066721593008, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1658,29 +1646,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: HomeScreen
       objectReference: {fileID: 0}
-    - target: {fileID: 7315583100703660766, guid: 328a3e4643b9b43cbbc4066721593008, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8154062980083531623, guid: 328a3e4643b9b43cbbc4066721593008, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8154062980083531623, guid: 328a3e4643b9b43cbbc4066721593008, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8154062980083531623, guid: 328a3e4643b9b43cbbc4066721593008, type: 3}
-      propertyPath: m_Color.b
-      value: 0.2950338
-      objectReference: {fileID: 0}
-    - target: {fileID: 8154062980083531623, guid: 328a3e4643b9b43cbbc4066721593008, type: 3}
-      propertyPath: m_Color.g
-      value: 0.2950338
-      objectReference: {fileID: 0}
-    - target: {fileID: 8154062980083531623, guid: 328a3e4643b9b43cbbc4066721593008, type: 3}
-      propertyPath: m_Color.r
-      value: 0.3207547
+    - target: {fileID: 7736426157075647438, guid: 328a3e4643b9b43cbbc4066721593008, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 92.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

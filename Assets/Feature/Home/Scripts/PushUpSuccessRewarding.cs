@@ -9,13 +9,13 @@ namespace Feature.Home.Scripts
         [SerializeField] private PushUpRewardingEffect _pushUpRewardingEffect;
         private void Awake()
         {
-            Messenger.Default.Subscribe<UserClickPayload>(OnRewarding);
+            Messenger.Default.Subscribe<PushUpSuccessPayload>(OnRewarding);
         }
         private void OnDestroy()
         {
-            Messenger.Default.Unsubscribe<UserClickPayload>(OnRewarding);
+            Messenger.Default.Unsubscribe<PushUpSuccessPayload>(OnRewarding);
         }
-        private void OnRewarding(UserClickPayload payload)
+        private void OnRewarding(PushUpSuccessPayload payload)
         {
             _pushUpRewardingEffect.PlayAnim();
         }

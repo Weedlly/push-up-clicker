@@ -36,10 +36,12 @@ namespace Feature.Characters.Scripts
                 case 2:
                     {
                         _animator.SetTrigger(Idle);
-                        _stepIdx = 0;
+                        _animator.SetTrigger(S1);
+                        _stepIdx = 1;
                         break;
                     }
             }
         }
+        public bool IsFinalStep() => _stepIdx == 2;
     }
 }

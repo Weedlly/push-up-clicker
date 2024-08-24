@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _filename: InventoryDataAsset.json
   _model:
-    ListInventoryData: []
+    ListInventoryData:
+    - InventoryType: 1
+      Amount: 0
+    - InventoryType: 2
+      Amount: 0
+    - InventoryType: 3
+      Amount: 5
   TestInventoryType: 0
   TestAmountChange: 0

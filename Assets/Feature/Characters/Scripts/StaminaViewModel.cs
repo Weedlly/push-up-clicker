@@ -5,22 +5,23 @@ using UnityEngine;
 
 namespace Feature.Characters.Scripts
 {
-    public class StaminaRecover : MonoBehaviour
+    public class StaminaViewModel : MonoBehaviour
     {
         [SerializeField] private InventoryDataAsset _inventoryDataAsset;
         [SerializeField] private StatUpgradeDataAsset _statUpgradeDataAsset;
         [SerializeField] private StatUpgradeConfig _statUpgradeConfig;
-
+        [SerializeField] private StaminaBarView _staminaBarView;
         private int _staminaRecoverPerSecond;
         private int _maxStamina;
+        private int _curStamina;
 
         private void Awake()
         {
-            Messenger.Default.Subscribe<StatUpgradeSuccess>(OnUpgradeStatSuccess);
-        }
-        private void Start()
-        {
+            _curStamina = _inventoryDataAsset.GetInventoryDataByType(InventoryType.Stamina).Amount;
             CalculateRecoverPerSecondAndMaxStamina();
+            _staminaBarView.Setup(_maxStamina,_curStamina);
+            
+            Messenger.Default.Subscribe<StatUpgradeSuccess>(OnUpgradeStatSuccess);
         }
         private void OnDestroy()
         {
@@ -39,18 +40,21 @@ namespace Feature.Characters.Scripts
         }
         private void RecoverStamina()
         {
-            int curStamina = _inventoryDataAsset.GetInventoryDataByType(InventoryType.Stamina).Amount;
-            if (curStamina == _maxStamina)
+            _curStamina = _inventoryDataAsset.GetInventoryDataByType(InventoryType.Stamina).Amount;
+            if (_curStamina == _maxStamina)
                 return;
             
-            if (curStamina + _staminaRecoverPerSecond <= _maxStamina)
+            if (_curStamina + _staminaRecoverPerSecond <= _maxStamina)
             {
                 _inventoryDataAsset.TryChangeInventoryData(InventoryType.Stamina, _staminaRecoverPerSecond);
             }
             else
             {
-                _inventoryDataAsset.TryChangeInventoryData(InventoryType.Stamina, _maxStamina - curStamina);
+                _inventoryDataAsset.TryChangeInventoryData(InventoryType.Stamina, _maxStamina - _curStamina);
             }
+            
+            _curStamina = _inventoryDataAsset.GetInventoryDataByType(InventoryType.Stamina).Amount;
+            _staminaBarView.Setup(_maxStamina,_curStamina);
         }
         private void OnUpgradeStatSuccess(StatUpgradeSuccess payload)
         {

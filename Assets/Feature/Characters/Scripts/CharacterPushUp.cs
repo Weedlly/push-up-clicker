@@ -37,6 +37,10 @@ namespace Feature.Characters.Scripts
             {
                 _inventoryDataAsset.TryChangeInventoryData(InventoryType.Stamina, - _equipmentDataConfig.EquipmentInfos[_commonUserDataAsset.CurEquipmentIdx].Kg);
                 _characterPushUpAnimation.PlayAnim();
+                
+                if (_characterPushUpAnimation.IsFinalStep())
+                    Messenger.Default.Publish(new PushUpSuccessPayload());
+                
                 _curDelayNextStep = _delayNextStep;
             }
            
