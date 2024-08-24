@@ -1,6 +1,7 @@
 using Common.Scripts.Data.DataAsset;
 using Feature.EquipmentPu.Scripts;
 using SuperMaxim.Messaging;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Feature.Characters.Scripts
@@ -17,6 +18,7 @@ namespace Feature.Characters.Scripts
         [SerializeField] private MeshRenderer _meshRenderer;
         private void Awake()
         {
+            OnEquipmentChanging(new EquipmentChangingPayload());
             Messenger.Default.Subscribe<EquipmentChangingPayload>(OnEquipmentChanging);
         }
         private void OnDestroy()
@@ -25,7 +27,10 @@ namespace Feature.Characters.Scripts
         }
         private void OnEquipmentChanging(EquipmentChangingPayload payload)
         {
-            _meshRenderer.materials[0] = _equipmentDataConfig.EquipmentInfos[_commonUserDataAsset.CurEquipmentIdx].Material;
+            _meshRenderer.SetMaterials(new List<Material>
+            {
+                _equipmentDataConfig.EquipmentInfos[_commonUserDataAsset.CurEquipmentIdx].Material
+            });
         }
 
     }
